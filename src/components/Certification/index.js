@@ -8,7 +8,7 @@ const Certifications = ({ openModal, setOpenModal }) => {
   const [toggle, setToggle] = useState('all');
 
   return (
-    <Container id="Certifications">
+    <Container id="certifications">
       <Wrapper>
         <Title>Certifications</Title>
         <Desc>
