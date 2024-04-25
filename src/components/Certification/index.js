@@ -4,7 +4,7 @@ import CertificationCard from '../Cards/CertificationCard'; // Corrected import 
 
 import { certifications } from '../../data/constants'; // Corrected import statement
 
-const Certifications = ({ openModal, setOpenModal }) => {
+const Certifications = () => {
   const [toggle, setToggle] = useState('all');
 
   return (
@@ -32,8 +32,7 @@ const Certifications = ({ openModal, setOpenModal }) => {
               <CertificationCard
                 key={certification.id}
                 certification={certification}
-                openModal={openModal}
-                setOpenModal={setOpenModal}
+                
               />
             ))}
         </CardContainer>

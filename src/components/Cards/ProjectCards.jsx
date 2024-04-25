@@ -20,6 +20,8 @@ const Card = styled.div`
     height: 490px;
     background-color: ${({ theme }) => theme.card};
     cursor: pointer;
+    textAlign: justify;
+
     border-radius: 10px;
     box-shadow: 0 0 12px 4px rgba(0,0,0,0.4);
     overflow: hidden;
@@ -101,6 +103,8 @@ const Description = styled.div`
     overflow: hidden;
     margin-top: 8px;
     display: -webkit-box;
+    textAlign: justify;
+
     max-width: 100%;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;

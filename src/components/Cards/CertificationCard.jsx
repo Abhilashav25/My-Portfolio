@@ -17,8 +17,9 @@ const Button = styled.button`
 `
 const Card = styled.div`
     width: 330px;
-    height: 490px;
+    height: 350px;
     background-color: ${({ theme }) => theme.card};
+    textAlign: justify;
     cursor: pointer;
     border-radius: 10px;
     box-shadow: 0 0 12px 4px rgba(0,0,0,0.4);
@@ -68,6 +69,9 @@ const Details = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
+    
+    textAlign: justify;
+
     gap: 0px;
     padding: 0px 2px;
 `
@@ -105,6 +109,8 @@ const Description = styled.div`
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
+    textAlign: justify;
+
 `
 const Avatar = styled.img`
     width: 38px;
@@ -117,16 +123,25 @@ const Avatar = styled.img`
 `
 
 const CertificationCard = ({certification,setOpenModal}) => {
+    console.log(certification);
+    const handleViewCertification = () => {
+        if (certification.drivelink) {
+            window.open(certification.drivelink, '_blank');
+        } else {
+            // Handle case where no drive link is available
+            console.error("No drive link available for certification.");
+        }
+    };
     return (
-        <Card onClick={() => setOpenModal({state: true, certification: certification})}>
+        <Card>
             <Image src={certification.image}/>
             <Details>
                 <Title>{certification.title}</Title>
                 <Date>{certification.date}</Date>
                 <Description>{certification.description}</Description>
             </Details>
-            {/* <Button>View Certification</Button> */}
-        </Card>
+            <Button onClick={handleViewCertification}>View Certification</Button>     
+       </Card>
     )
 }
 

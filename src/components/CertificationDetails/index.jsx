@@ -2,7 +2,7 @@ import { CloseRounded } from '@mui/icons-material'; // Removed unnecessary impor
 import { Modal } from '@mui/material';
 import React from 'react';
 import styled from 'styled-components';
-// import { certifications } from '../../data/constants';
+import { certifications } from '../../data/constants';
 
 const Container = styled.div`
 width: 100%;
@@ -121,7 +121,9 @@ const Button = styled.a`
 `;
 
 
+
 const Index = ({ openModal, setOpenModal }) => {
+    conosle.log(openModal);
     const certification = openModal?.certification;
     return (
         <Modal open={true} onClose={() => setOpenModal({ state: false, certification: null })}>
